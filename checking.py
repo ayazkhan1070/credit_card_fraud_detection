@@ -6,18 +6,20 @@ import sklearn
 from joblib import load
 
 try:
-    model1 = load(r"D:\ds_intern\iso_forest.pkl")
-    model2 = load(r"D:\ds_intern\lof.pkl")
+    # model1 = load(r"D:\ds_intern\iso_forest.pkl")
+    # model2 = load(r"D:\ds_intern\lof.pkl")
+    model1 = load("iso_forest.pkl")
+    model2 = load("lof.pkl")
 except Exception as e:
     print(f"Error loading model: {e}")
-scaler = load(r"D:\ds_intern\scaler.pkl")
-pca=load(r"D:\ds_intern\pca.pkl")
+scaler = load("scaler.pkl")
+pca=load("pca.pkl")
  # Load your model
 # with open("D:/ds_intern/Section02.pkl", 'rb') as file:
 #     model = pickle.load(file)
 
 
-df1=pd.read_csv('./credit_cardtest.csv')
+# df1=pd.read_csv('./credit_cardtest.csv')
 
 def detect_fraudulent_transactions(new_data: pd.DataFrame, model):
     columns=new_data.columns
@@ -34,5 +36,5 @@ def detect_fraudulent_transactions(new_data: pd.DataFrame, model):
     #fraudulent_transactions = pca_df[y_pred_model == 1]
 
     return y_pred_model
-print(model2)
-print(detect_fraudulent_transactions(df1, model2))
+# print(model2)
+# print(detect_fraudulent_transactions(df1, model2))
