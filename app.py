@@ -7,8 +7,10 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 
 try:
-    model1 = load(r"D:\ds_intern\iso_forest.pkl")
-    model2 = load(r"D:\ds_intern\lof.pkl")
+    # model1 = load(r"D:\ds_intern\iso_forest.pkl")
+    # model2 = load(r"D:\ds_intern\lof.pkl")
+    model1 = load(r"iso_forest.pkl")
+    model2 = load(r"lof.pkl")
 except Exception as e:
     print(f"Error loading model: {e}")
 
@@ -19,8 +21,8 @@ st.set_page_config(page_title="ML Model Runner", layout="wide")
 st.title("Run ML Model on Your Dataset")
 
 # Sidebar with navigation
-st.sidebar.title("Navigation")
-page = st.sidebar.selectbox("Choose a page:", ["Home", "Run Model 1", "Run Model 2"])
+st.sidebar.title("Choose your model")
+page = st.sidebar.selectbox("Choose a page:", ["Home", "Iso Forest", "Local Outlier Factor"])
 
 # Home Page
 if page == "Home":
@@ -32,7 +34,7 @@ if page == "Home":
     """)
 
 # Run Model Page
-elif page == "Run Model 1":
+elif page == "Iso Forest":
     st.header("Run Your ML Model")
 
     # File uploader for user dataset
@@ -59,7 +61,7 @@ elif page == "Run Model 1":
             st.error(f"Error loading model: {str(e)}")
 
 # Run Model Page
-elif page == "Run Model 2":
+elif page == "Local Outlier Factor":
     st.header("Run Your ML Model")
 
     # File uploader for user dataset
