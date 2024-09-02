@@ -9,8 +9,8 @@ from sklearn.decomposition import PCA
 try:
     # model1 = load(r"D:\ds_intern\iso_forest.pkl")
     # model2 = load(r"D:\ds_intern\lof.pkl")
-    model1 = load(r"iso_forest.pkl")
-    model2 = load(r"lof.pkl")
+    model1 = load("iso_forest.pkl")
+    model2 = load("lof.pkl")
 except Exception as e:
     print(f"Error loading model: {e}")
 
